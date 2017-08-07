@@ -42,24 +42,4 @@ public class InsertionSort {
         arr[j] = t;
     }
 
-    // 测试InsertionSort
-    public static void main(String[] args) {
-
-        int N = 20000;
-        Integer[] arr1 = SortTestHelper.generateRandomArray(N, 0, 100000);
-        Integer[] arr2 = Arrays.copyOf(arr1, N);
-        
-        SortTestHelper.testSort("sortingBasic.selectionSort.usingComparable.SelectionSort", arr1);
-        SortTestHelper.testSort("sortingBasic.insertionSort.InsertionSort", arr2);
-        
-        // 测试近乎有序的数组
-        int swapTimes = 100;
-        System.out.println("Test for nearly ordered array, size = " + N + " , swap time = " + swapTimes);
-
-        arr1 = SortTestHelper.generateNearlyOrderedArray(N, swapTimes);
-        arr2 = Arrays.copyOf(arr1, arr1.length);
-
-        SortTestHelper.testSort("sortingBasic.selectionSort.usingComparable.SelectionSort", arr1);
-        SortTestHelper.testSort("sortingBasic.insertionSort.InsertionSort", arr2);
-    }
 }
