@@ -3,10 +3,11 @@ package sortingAdvance.mergeSort;
 import java.util.Arrays;
 
 import generateTestCase.SortTestHelper;
+import sortingBasic.insertionSort.InsertionSort;
 
-public class MergeSort {
+public class MergeSortOpt {
 	// 我们的算法类不允许产生任何实例
-    private MergeSort(){}
+    private MergeSortOpt(){}
 
     // 将arr[l...mid]和arr[mid+1...r]两部分进行归并
     private static void merge(Comparable[] arr, int l, int mid, int r) {
@@ -36,13 +37,20 @@ public class MergeSort {
     // 递归使用归并排序,对arr[l...r]的范围进行排序
     private static void sort(Comparable[] arr, int l, int r) {
 
-        if (l >= r)
+        // 优化2: 对于小规模数组, 使用插入排序，因为小规模的数组片段比大规模的原数组有序性更强
+        if( r - l <= 15 ){
+            InsertionSort.sort(arr, l, r);
             return;
+        }
 
         int mid = (l+r)/2;
         sort(arr, l, mid);
         sort(arr, mid + 1, r);
-        merge(arr, l, mid, r);
+
+        // 优化1: 对于arr[mid] <= arr[mid+1]的情况,不进行merge。因为两个子序列是有序的。但此优化无法改变数量级，归并算法无法退化成o(n)复杂度的，还是nlog（n）复杂度
+        // 对于近乎有序的数组非常有效,但是对于一般情况,有一定的性能损失，因为判断本身也是需要消耗资源的
+        if( arr[mid].compareTo(arr[mid+1]) > 0 )
+            merge(arr, l, mid, r);
     }
 
     public static void sort(Comparable[] arr){
@@ -50,5 +58,5 @@ public class MergeSort {
         int n = arr.length;
         sort(arr, 0, n-1);
     }
-
+    
 }
