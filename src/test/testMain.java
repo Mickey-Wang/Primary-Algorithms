@@ -18,6 +18,7 @@ public class testMain {
         Integer[] arr4 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr5 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr6 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr7 = Arrays.copyOf(arr1, arr1.length);
         
         // ------------------------ basic --------------------------------
         SortTestHelper.testSort("sortingBasic.selectionSort.usingComparable.SelectionSort", arr1);
@@ -33,6 +34,7 @@ public class testMain {
         // 当N=100`000，MergeSort : 84ms; 当N=1`000`000，InsertionSort : 17171ms
         SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSort", arr5);
         SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortOpt", arr6);
+        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortBU", arr7);
         
 
         System.out.println();
@@ -48,6 +50,7 @@ public class testMain {
         arr4 = Arrays.copyOf(arr1, arr1.length);
         arr5 = Arrays.copyOf(arr1, arr1.length);
         arr6 = Arrays.copyOf(arr1, arr1.length);
+        arr7 = Arrays.copyOf(arr1, arr1.length);
 
         // ------------------------ basic --------------------------------
         SortTestHelper.testSort("sortingBasic.selectionSort.usingComparable.SelectionSort", arr1);
@@ -62,6 +65,7 @@ public class testMain {
         // 当N=1`000`000，MergeSort : 299ms; 当N=1`000`000，InsertionSort : 61ms
         SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSort", arr5);
         SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortOpt", arr6);
+        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortBU", arr7);
 
         return;
 	}
