@@ -44,8 +44,8 @@ public class MergeSortBU {
         int n = arr.length;
 
         // Merge Sort Bottom Up 无优化版本
-        for (int sz = 1; sz < n; sz *= 2)
-            for (int i = 0; i < n - sz; i += sz+sz)
+        for (int sz = 1; sz < n; sz *= 2) // sz代表每次归并所考察的数据规模
+            for (int i = 0; i + sz < n; i += sz+sz) // i之所以加一个sz是因为，如果最后只剩一个sz，而归并排序是对2sz进行排序，那么此时就没有必要进行下去了
                 // 对 arr[i...i+sz-1] 和 arr[i+sz...i+2*sz-1] 进行归并
                 merge(arr, i, i+sz-1, Math.min(i+sz+sz-1,n-1));
 

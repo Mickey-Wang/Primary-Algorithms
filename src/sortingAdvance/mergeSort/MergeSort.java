@@ -16,7 +16,7 @@ public class MergeSort {
 
         // 初始化，i指向左半部分的起始索引位置l；j指向右半部分起始索引位置mid+1
         int i = l, j = mid+1;
-        for( int k = l ; k <= r; k ++ ){
+        for( int k = l ; k <= r; k ++ ){ // 用副本数组中的值，一个个替换覆盖原数组的每一个值，所以要循环r-l+1次
 
             if( i > mid ){  // 如果左半部分元素已经全部处理完毕
                 arr[k] = aux[j-l]; j ++;
