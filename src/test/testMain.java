@@ -7,7 +7,7 @@ import generateTestCase.SortTestHelper;
 public class testMain {
 
 	public static void main(String[] args) {
-		int N = 1000000;
+		int N = 10000000;
 
         // 测试1 一般测试
         System.out.println("Test for random array, size = " + N + " , random range [0, " + N + "]");
@@ -17,9 +17,10 @@ public class testMain {
 //        Integer[] arr3 = Arrays.copyOf(arr1, arr1.length);
 //        Integer[] arr4 = Arrays.copyOf(arr1, arr1.length);
 //        Integer[] arr5 = Arrays.copyOf(arr1, arr1.length);
-//        Integer[] arr6 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr6 = Arrays.copyOf(arr1, arr1.length);
 //        Integer[] arr7 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr8 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr9 = Arrays.copyOf(arr1, arr1.length);
         
         // ------------------------ basic --------------------------------
 //        SortTestHelper.testSort("sortingBasic.selectionSort.usingComparable.SelectionSort", arr1);
@@ -34,9 +35,10 @@ public class testMain {
          否则，你就见识了O(n^2)的算法和O(nlogn)算法的本质差异*/
         // 当N=100`000，MergeSort : 84ms; 当N=1`000`000，InsertionSort : 17171ms
 //        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSort", arr5);
-//        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortOpt", arr6);
+        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortOpt", arr6);
 //        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortBU", arr7);
-        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort", arr8);
+//        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort", arr8);
+        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort4NearlyOrdered", arr9);
         
 
         System.out.println();
@@ -51,9 +53,10 @@ public class testMain {
 //        arr3 = Arrays.copyOf(arr1, arr1.length);
 //        arr4 = Arrays.copyOf(arr1, arr1.length);
 //        arr5 = Arrays.copyOf(arr1, arr1.length);
-//        arr6 = Arrays.copyOf(arr1, arr1.length);
+        arr6 = Arrays.copyOf(arr1, arr1.length);
 //        arr7 = Arrays.copyOf(arr1, arr1.length);
         arr8 = Arrays.copyOf(arr1, arr1.length);
+        arr9 = Arrays.copyOf(arr1, arr1.length);
 
         // ------------------------ basic --------------------------------
 //        SortTestHelper.testSort("sortingBasic.selectionSort.usingComparable.SelectionSort", arr1);
@@ -67,9 +70,10 @@ public class testMain {
          但是当swapTimes小到一定程度, InsertionSort变得比MergeSort快*/
         // 当N=1`000`000，MergeSort : 299ms; 当N=1`000`000，InsertionSort : 61ms
 //        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSort", arr5);
-//        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortOpt", arr6);
+        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortOpt", arr6);
 //        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortBU", arr7);
-        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort", arr8);
+//        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort", arr8);
+        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort4NearlyOrdered", arr9);
 
         return;
 	}

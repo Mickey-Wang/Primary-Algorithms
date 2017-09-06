@@ -41,7 +41,8 @@ public class InsertionSort {
     public static void sort(Comparable[] arr, int l, int r){
     	
         if(!(l >= 0 && l <= r && r < arr.length))
-        		throw new RuntimeException("插入排序入参错误不正确");;
+//        		throw new RuntimeException("插入排序入参错误不正确");
+    			return;
 
         for( int i = l + 1 ; i <= r ; i ++ ){
             Comparable e = arr[i];
