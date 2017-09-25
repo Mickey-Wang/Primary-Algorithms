@@ -3,7 +3,7 @@ package sortingAdvance.quickSort;
 import sortingBasic.insertionSort.InsertionSort;
 
 /*
- * 与优化后的归并排序比较测试后的结果：
+ * 这是一个随机化算法的例子，与优化后的归并排序比较测试后的结果：
 	Test for random array, size = 10000000 , random range [0, 10000000]
 	MergeSortOpt : 6405ms
 	QuickSort4NearlyOrdered : 3770ms

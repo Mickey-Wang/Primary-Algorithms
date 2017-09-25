@@ -7,7 +7,7 @@ import generateTestCase.SortTestHelper;
 public class testMain {
 
 	public static void main(String[] args) {
-		int N = 10000000;
+		int N = 1000000;
 
         // 测试1 一般测试
         System.out.println("Test for random array, size = " + N + " , random range [0, " + N + "]");
@@ -19,8 +19,10 @@ public class testMain {
 //        Integer[] arr5 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr6 = Arrays.copyOf(arr1, arr1.length);
 //        Integer[] arr7 = Arrays.copyOf(arr1, arr1.length);
-        Integer[] arr8 = Arrays.copyOf(arr1, arr1.length);
-        Integer[] arr9 = Arrays.copyOf(arr1, arr1.length);
+//        Integer[] arr8 = Arrays.copyOf(arr1, arr1.length);
+//        Integer[] arr9 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr10 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr11 = Arrays.copyOf(arr1, arr1.length);
         
         // ------------------------ basic --------------------------------
 //        SortTestHelper.testSort("sortingBasic.selectionSort.usingComparable.SelectionSort", arr1);
@@ -29,16 +31,13 @@ public class testMain {
 //        SortTestHelper.testSort("sortingBasic.shellSort.ShellSort", arr4); // 希尔排序的性能在前四种中最好
         
         // ------------------------ advance --------------------------------
-         /*Merge Sort是我们学习的第一个O(nlogn)复杂度的算法
-         可以在1秒之内轻松处理100万数量级的数据
-         注意：不要轻易尝试使用SelectionSort, InsertionSort或者BubbleSort处理100万级的数据
-         否则，你就见识了O(n^2)的算法和O(nlogn)算法的本质差异*/
-        // 当N=100`000，MergeSort : 84ms; 当N=1`000`000，InsertionSort : 17171ms
 //        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSort", arr5);
         SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortOpt", arr6);
 //        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortBU", arr7);
 //        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort", arr8);
-        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort4NearlyOrdered", arr9);
+//        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort4NearlyOrdered", arr9);
+        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort2Ways", arr10);
+        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort3Ways", arr11);
         
 
         System.out.println();
@@ -55,8 +54,10 @@ public class testMain {
 //        arr5 = Arrays.copyOf(arr1, arr1.length);
         arr6 = Arrays.copyOf(arr1, arr1.length);
 //        arr7 = Arrays.copyOf(arr1, arr1.length);
-        arr8 = Arrays.copyOf(arr1, arr1.length);
-        arr9 = Arrays.copyOf(arr1, arr1.length);
+//        arr8 = Arrays.copyOf(arr1, arr1.length);
+//        arr9 = Arrays.copyOf(arr1, arr1.length);
+        arr10 = Arrays.copyOf(arr1, arr1.length);
+        arr11 = Arrays.copyOf(arr1, arr1.length);
 
         // ------------------------ basic --------------------------------
 //        SortTestHelper.testSort("sortingBasic.selectionSort.usingComparable.SelectionSort", arr1);
@@ -65,16 +66,28 @@ public class testMain {
 //        SortTestHelper.testSort("sortingBasic.shellSort.ShellSort", arr4);
         
         // ------------------------ advance --------------------------------
-         /*对于近乎有序的数组, 数组越有序, InsertionSort的时间性能越趋近于O(n)
-         所以可以尝试, 当swapTimes比较大时, MergeSort更快
-         但是当swapTimes小到一定程度, InsertionSort变得比MergeSort快*/
-        // 当N=1`000`000，MergeSort : 299ms; 当N=1`000`000，InsertionSort : 61ms
 //        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSort", arr5);
         SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortOpt", arr6);
 //        SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortBU", arr7);
 //        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort", arr8);
-        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort4NearlyOrdered", arr9);
+//        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort4NearlyOrdered", arr9);
+        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort2Ways", arr10);
+        SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort3Ways", arr11);
 
+        System.out.println();
+        
+        // 测试3 测试存在包含大量相同元素的数组
+        System.out.println("Test for random array, size = " + N + " , random range [0,10]");
+        
+        arr1 = SortTestHelper.generateRandomArray(N, 0, 10);
+        arr6 = Arrays.copyOf(arr1, arr1.length);
+        arr10 = Arrays.copyOf(arr1, arr1.length);
+        arr11 = Arrays.copyOf(arr1, arr1.length);
+      
+      	SortTestHelper.testSort("sortingAdvance.mergeSort.MergeSortOpt", arr6);
+      	SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort2Ways", arr10);
+      	SortTestHelper.testSort("sortingAdvance.quickSort.QuickSort3Ways", arr11);
+      	
         return;
 	}
 

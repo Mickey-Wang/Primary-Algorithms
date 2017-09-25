@@ -5,6 +5,13 @@ import java.util.Arrays;
 import generateTestCase.SortTestHelper;
 import sortingBasic.insertionSort.InsertionSort;
 
+/**
+ * <p>对于近乎有序的数组, 数组越有序, InsertionSort的时间性能越趋近于O(n)</p>
+ * <p>所以可以尝试, 当swapTimes比较大时, MergeSort更快，但是当swapTimes小到一定程度, InsertionSort变得比MergeSort快</p>
+ * <p>当N=1`000`000，MergeSort : 299ms; 当N=1`000`000，InsertionSort : 61ms</p>
+ * @author MickeyWang
+ *
+ */
 public class MergeSortOpt {
 	// 我们的算法类不允许产生任何实例
     private MergeSortOpt(){}

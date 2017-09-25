@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 import generateTestCase.SortTestHelper;
 
+/**
+ * <p>Merge Sort是我们学习的第一个O(nlogn)复杂度的算法，可以在1秒之内轻松处理100万数量级的数据</p>
+ * <p>注意：不要轻易尝试使用SelectionSort, InsertionSort或者BubbleSort处理100万级的数据，否则，你就见识了O(n^2)的算法和O(nlogn)算法的本质差异</p>
+ * <p>当N=100`000，MergeSort : 84ms; 当N=1`000`000，InsertionSort : 17171ms</p>
+ * @author MickeyWang
+ *
+ */
 public class MergeSort {
 	// 我们的算法类不允许产生任何实例
     private MergeSort(){}
