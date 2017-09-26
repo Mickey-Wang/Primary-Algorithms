@@ -14,7 +14,7 @@ public class QuickSort2Ways {
     private QuickSort2Ways(){}
 
     // 双路快速排序的partition
-    // 返回p, 使得arr[l...p-1] < arr[p] ; arr[p+1...r] > arr[p]
+    // 返回p, 使得arr[l...p-1] <= arr[p] ; arr[p+1...r] >= arr[p]
     private static int partition(Comparable[] arr, int l, int r){
 
         // 随机在arr[l...r]的范围中, 选择一个数值作为标定点pivot
@@ -33,7 +33,7 @@ public class QuickSort2Ways {
             while( j >= l+1 && arr[j].compareTo(v) > 0 )
                 j --;
 
-            // 对于上面的两个边界的设定, 可以参考: http://coding.imooc.com/learn/questiondetail/4920.html
+            // 对于上面的两个边界的设定，是因为对于连续出现相等的情况，前者会交换i和j的值；而后者则会将连续出现的这些值归为其中一方，使得两棵子树不平衡
 
             if( i > j )
                 break;

@@ -24,7 +24,7 @@ public class QuickSort {
             if( arr[i].compareTo(v) < 0 ){
 //                j ++;
 //                swap(arr, j, i);
-            		 swap(arr, ++j, i); // 更为优雅
+        		   swap(arr, ++j, i); // 更为优雅
             }
 
         swap(arr, l, j);
