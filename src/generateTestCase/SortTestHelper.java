@@ -89,4 +89,35 @@ public class SortTestHelper {
         }
     }
     
+    // 生成一个完全有序的数组
+    public static Integer[] generateOrderedArray( int n ){
+
+        return generateNearlyOrderedArray(n, 0);
+    }
+
+    // 生成一个完全逆序的数组
+    public static Integer[] generateInversedArray( int n ){
+
+        Integer[] arr = generateOrderedArray( n );
+        for( int i = n/2 - 1 ; i >= 0 ; i -- ){
+            Integer t = arr[i];
+            arr[i] = arr[n-i-1];
+            arr[n-i-1] = t;
+        }
+        return arr;
+    }
+    
+    // 将数组arr随机化
+    public static void shuffleArray( Object[] arr ){
+
+        int n = arr.length;
+        for( int i = 0 ; i < n ; i ++ ){
+            int j = (int)(Math.random() * (n-i)) + i;
+
+            Object t = arr[i];
+            arr[i] = arr[j];
+            arr[j] = t;
+        }
+    }
+    
 }
